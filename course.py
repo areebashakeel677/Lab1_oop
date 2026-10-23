@@ -16,7 +16,12 @@
         self.marks[student] = marks
         # TODO: store marks in self.marks using the student name as key
         #pass
-
+    def remove_student(self, name: str) -> None:
+        """Remove a student, or raise KeyError if missing."""
+        if name not in self.marks:
+            raise KeyError(f"No student named {name}")
+        del self.marks[name]
+    
     def average(self):
         # TODO: return the average of all marks
         if len(self.marks) == 0:
